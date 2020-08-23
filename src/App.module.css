@@ -1,0 +1,46 @@
+.container{
+    font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
+    margin : 50px;
+}
+
+.search_form{
+    text-align : center;
+}
+
+input[type="text" i] {
+    padding: 1px 2px;
+    width: 254px;
+    height: 35px;
+    font-size: 25px;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin-right: 0px;
+}
+
+input[type="text" i]:focus{
+    outline : none;
+}
+
+.search_button{
+    background-color: #97BC62FF;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    margin-left: 34px;
+    color : white
+}
+
+.search_button:hover{
+    background-color : #2C5F2D;
+    box-shadow:  3px 3px 5px 6px #ccc;
+}
+
+.search_button:focus{
+    outline : none
+}
+
+.heading{
+    position : relative;
+    text-align: center;
+    margin-top : 100px;
+}
