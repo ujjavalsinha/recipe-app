@@ -1,0 +1,66 @@
+.container{
+    
+    margin-top : 30px;
+    
+    margin-left : 80px;
+    margin-right : 80px;
+    
+}
+.heading{
+    font-size: 50px;
+    
+    color :#00A4CCFF;
+    
+}
+.content{
+    display : flex;
+}
+.container > * {
+
+}
+
+.image{
+    width : 80%;
+    height : 400px;
+    box-shadow:  3px 5px 5px 6px #ccc;
+    border-radius : 12px;
+    margin-bottom : 50px;
+    margin-top : 40px;
+}
+.ingredient {
+    font-size : 30px;
+    font-weight : bolder;
+    text-decoration: underline;
+}
+.list > li{
+    font-size : 25px;
+    font-weight: 500;
+}
+
+.chart {
+    margin-left : auto;
+    margin-right : auto;
+    
+    flex : 1;
+}
+.chart> h1{
+    font-size : 35px;
+    font-weight : bolder;
+    text-decoration: underline;
+}
+.data > h1{
+    font-size : 35px;
+    font-weight : bolder;
+    text-decoration: underline;
+}
+
+.data {
+    flex :2;
+    width : 50%
+}
+
+.piechart{
+    border : 2px solid black;
+    
+}
+
