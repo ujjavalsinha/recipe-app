@@ -76,3 +76,20 @@ section {
     padding-left : 15px;
 }
 
+.norecipes{
+    margin-top : 150px;
+}
+
+.preloader {
+    align-items: center;
+    
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    transition: opacity 0.3s linear;
+    width: 100%;
+    z-index: 9999;
+  }
