@@ -2,20 +2,30 @@
     font-family: 'Poppins', sans-serif;
     
 }
-
+.home {
+    animation : transitionRight 1s;
+}
+.search_form{
+    padding : 3px;
+    animation : transitionRight 1s;
+}
+.search_form i{
+    color : white;
+}
 body{
     background: url(./images/transparent.jpg) no-repeat center center fixed;
     -webkit-background-size : cover;
     background-size : cover;
 }
 .home {
-    color : black;
-    margin-left : 100px;
-    margin-top : 50px;
+    color : white;
+    font-weight : bolder;
+    margin-left : 80px;
+    margin-top : 25px;
     position : sticky;
     padding : 5px 20px 5px 20px;
     display : inline-block;
-    background : linear-gradient(to right , #02aab0 , #00cdac);
+    background-color :  rgb(51, 160, 51);
 }
 
 a {
@@ -30,19 +40,32 @@ a {
 }
 .search_form{
     /* background-color : #00cdac; */
-    background : linear-gradient(to right , #02aab0 , #00cdac);
-    position : sticky
+    background-color :  rgb(51, 160, 51);
+    border-radius : 15px;
     
 }
 .search_form > i{
-    padding : 0px 20px 0px 20px;
+    padding : 0px 10px 0px 10px;
     cursor : pointer;
 }
 input[type=text]{
     width : 200px;
-    height : 40px;
-    border : 3px solid #00cdac;
+    height : 30px;
+    
+    border : none;
+    outline : none;
+    padding : 2px;
+    background : transparent;
+    color : white ;
+    padding : 5px;
 }
+input[type=text]:focus{
+    outline : none;
+}
+section {
+    animation : transitionLeft 1s
+}
+
 section {
     
     margin : 100px;
@@ -70,12 +93,16 @@ section {
 
 .heading{
     font-size : 45px;
+    width : 500px;
     font-weight : 500;
-    background : linear-gradient(to right , #02aab0 , #00cdac);
+    background-color : rgb(51, 160, 51);
     margin-right : 150px;
     padding-left : 15px;
+    color : white;
 }
-
+.welcome p{
+    font-size : 14px;
+}
 .norecipes{
     margin-top : 150px;
 }
@@ -93,3 +120,29 @@ section {
     width: 100%;
     z-index: 9999;
   }
+
+  @keyframes transitionLeft {
+      from{
+        opacity : 0;
+        transform : translateX(100%);
+      }
+
+      to {
+        opacity : 1;
+        transform : translateX(0);
+      }
+  }
+
+  @keyframes transitionRight {
+      from {
+          opacity : 0;
+          transform : translateX(-100%)
+        
+      }
+      to {
+          opacity : 1;
+          transform : translateX(0)
+      }
+  }
+
+  

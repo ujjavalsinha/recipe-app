@@ -1,16 +1,45 @@
 .container{
-    
+    animation : transitionIn 1s;
     margin-top : 30px;
-    
-    margin-left : 80px;
-    margin-right : 80px;
+    margin-left : 0px;
+    background-color : rgb(250, 249, 249);
+    width : 60%;
+    display : flex;
+    flex-direction : column;
+    justify-content : space-between;
+    border : none;
+    padding : 40px;
+    box-shadow : 0 0 5px 5px rgba(214, 206, 206, 0.3)
     
 }
+
+.separator{
+    
+    background-color : rgb(190, 184, 184);
+    height : 2px;
+    width : 100%;
+    margin : auto;
+    margin-bottom : 30px;
+}
 .heading{
-    font-size: 50px;
-    
-    color :#00A4CCFF;
-    
+    font-size: 30px;
+    color : white;
+    background-color : rgb(255, 72, 0);
+    display : flex;
+    justify-content : center;
+    padding : 10px;
+    border-radius : 8px;
+}
+.calories {
+    color : white;
+    background-color : rgb(51, 160, 51);
+    display : flex;
+    justify-content : center;
+    width : 60%;
+    margin : auto;
+    padding : 5px 0;
+    border-radius : 4px;
+    margin-bottom : 20px;
 }
 .content{
     /* display : flex; */
@@ -18,22 +47,32 @@
 .container > * {
 
 }
+.ingredientsList img {
+    width : 30px ;
+    height : 30px;
+    display : flex;
+    margin : auto;
+}
 
 .image{
-    width : 80%;
-    height : 400px;
-    box-shadow:  3px 5px 5px 6px #ccc;
-    border-radius : 12px;
-    margin-bottom : 50px;
-    margin-top : 40px;
+    width : 300px;
+    height : 300px;
+    display : block;
+    margin : auto;
+    margin-bottom : 30px;
+    margin-top : 10px;
+    box-shadow : 0 0 10px 5px rgb(126, 124, 124,0.3)
 }
 .ingredient {
-    font-size : 30px;
     font-weight : bolder;
-    text-decoration: underline;
+    color : white;
+    display : flex;
+    width : 100%;
+    padding : 10px 0;
+    justify-content : center;
+    background-color : rgb(51, 160, 51);
 }
 .list > li{
-    font-size : 25px;
     font-weight: 500;
 }
 
@@ -54,13 +93,39 @@
     text-decoration: underline;
 }
 
+.ingredientsList{
+    box-sizing : border-box;
+    border : none;
+    border-radius : 8px;
+    width : 80%;
+    padding : 15px;
+    box-shadow : 0 0 5px 0 rgba(0,0,0,0.3);
+    display : flex;
+    flex-direction : column;
+    margin : auto;
+    margin-bottom : 30px;
+    
+}
+
 .data {
     flex :2;
-    width : 50%
+    
 }
 
 .piechart{
     border : 2px solid black;
     
+}
+
+@keyframes transitionIn {
+    from {
+        opacity : 0;
+        transform : rotateX(-360);
+    }
+
+    to {
+        opacity : 1;
+        transform : rotateX(0)
+    }
 }
 

@@ -1,8 +1,9 @@
 import React from 'react'
 import styles from './Recipe.module.css'
 import { Pie } from 'react-chartjs-2';
-
-export const Recipe = ({calories,label,image,ingredients,totalNutrients}) => {
+import PropTypes from 'prop-types'
+import recipeBook from '../../images/recipe-book.svg'
+export const Recipe = ({calories,index,label,image,ingredients,totalNutrients}) => {
     const data = {
         labels :[ 'Carbs', 'Fats','Protein'],
         datasets : [{
@@ -15,17 +16,31 @@ export const Recipe = ({calories,label,image,ingredients,totalNutrients}) => {
             ]
         }]
     }
+    let separator = null 
+    if(index===0){
+        separator = null
+    }
+    else{
+        separator = (
+            <div className={styles.separator}></div>
+        )
+    }
     return (
         <div className={styles.container}>
+            {/* {separator} */}
             <h1 className={styles.heading}>{label}</h1>
             <div className={styles.content}> 
                 <div className={styles.data}>
-                    <h1>Calories : {Number((calories).toFixed(2))}</h1>
+                    <p className={styles.calories}>Calories : {Number((calories).toFixed(2))}</p>
                     <img src={image} className={styles.image} alt={label}/>
-                    <h3 className={styles.ingredient}>Ingredients</h3>
-                    <ol className={styles.list}>
-                        {ingredients.map(ingredient=><li key={ingredients.indexOf(ingredient)}>{ingredient.text}</li>)}
-                    </ol> 
+                    <div className={styles.ingredientsList}>
+                        <img src={recipeBook} alt='recipe'/>
+                        <p className={styles.ingredient}>Ingredients</p>
+                        <ol className={styles.list}>
+                            {ingredients.map(ingredient=><li key={ingredients.indexOf(ingredient)}>{ingredient.text}</li>)}
+                        </ol> 
+                    </div>
+                    
                 </div>
                 <div className={styles.chart}>
                     {/* <h1>Macros Distribution</h1>
@@ -41,3 +56,4 @@ export const Recipe = ({calories,label,image,ingredients,totalNutrients}) => {
         </div>
     )
 }
+

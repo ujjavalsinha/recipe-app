@@ -6,12 +6,15 @@ import { fetchRecipes } from './api'
 import {Recipe } from './components/Recipe/Recipe';
 import food from './images/transparent.png'
 import spinner from './images/spinner.svg'
+import withClass from './hoc/withClass.js'
+import Auxiliary from './hoc/Auxiliary.js'
+import PropTypes from 'prop-types'
 
 function App() {
   const [ recipes, setRecipes ] = useState(['first'])
   const [ dish, setDish ] = useState('')
   const [ query, setQuery ] = useState('')
-  const [ noData, setnoData ] = useState(false)
+  
   
 
   useEffect(()=>{
@@ -56,8 +59,8 @@ function App() {
     setRecipes([])
   }
   return (
-    <div className={styles.container}>
-      <a onClick={recipeReset} href='#'><h2 className={styles.home}>Home</h2></a>
+    <Auxiliary>
+      <a onClick={recipeReset} href='#'><p className={styles.home}>Home</p></a>
       <div className={styles.main}>
         <div className={styles.search_form}>
           <input type='text' className={styles.search_bar} value={dish} onChange={(e)=>handleInput(e.target.value)}/>
@@ -70,9 +73,10 @@ function App() {
           query!=='' ? 
             recipes[0]!=='first' ?
               <div>
-              {recipes.map(recipe => 
+              {recipes.map((recipe,index) =>
               <Recipe 
               key = {recipe.recipe.label}
+              index= {index}
               calories={recipe.recipe.calories} 
               image={recipe.recipe.image} 
               label={recipe.recipe.label}
@@ -97,8 +101,13 @@ function App() {
           </section>
         }
         </div>
-    </div>
+    </Auxiliary>
   );
 }
 
-export default App;
+App.propTypes = {
+  recipes : PropTypes.array,
+  dish : PropTypes.string,
+  query : PropTypes.string
+}
+export default withClass(App,styles.container);
